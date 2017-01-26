@@ -87,17 +87,9 @@ class ContactManager extends Component {
   }
 
   discardChanges() {
-    if (this.state.displayMode==="add"){
-    	this.setState({	displayMode: "list", 
-			contacts: this.state.contacts, 
-			activeContact: emptyContact});
-    } else if (this.state.displayMode==="edit"){
-	this.setState({activeContact: {fullName: this.state.backupContact.fullName,
-					phone: this.state.backupContact.phone,
-					email: this.state.backupContact.email,
-					notes: this.state.backupContact.notes}});
-	this.confirmContact();
-    };
+    this.setState({displayMode: "list", 
+		contacts: this.state.contacts, 
+		activeContact: emptyContact});
   }
 
   handleContactSelect(contact) {
@@ -179,7 +171,7 @@ class ContactManager extends Component {
                         notes={this.state.activeContact.notes}
                         onInputChange={(e) => this.handleInputChange(e)}/>
 	<Button onClick={() => this.confirmContact()} title="Accept" disabled={false}/>
-        <Button onClick={() => this.discardChanges()} title="Cancel" disabled={false}/>
+        <Button onClick={() => this.discardChanges()} title="Delete" disabled={false}/>
       </div>
       )
     };
