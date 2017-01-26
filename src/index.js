@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ContactManager from './App';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <ContactManager />,
   document.getElementById('root')
 );
